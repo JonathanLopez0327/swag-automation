@@ -23,7 +23,7 @@ describe('Product Catalog', () => {
         catalogPage.addProductToCartByName(product);
         catalogPage.getShoppingCartBadge().should('eq', '1');
         catalogPage.removeProductByName(product);
-        cy.get('this.shoppingCartBadge').should('not.exist');
+        cy.get('.shopping_cart_badge').should('not.exist');
     });
 
     it('should remove a product from the cart', () => {
@@ -32,6 +32,6 @@ describe('Product Catalog', () => {
         catalogPage.goToCart();
         cartPage.getCartProductNames().should('include', product);
         cartPage.removeProductByName(product);
-        cy.get('this.shoppingCartBadge').should('not.exist');
+        cy.get('.shopping_cart_badge').should('not.exist');
     });
 });
